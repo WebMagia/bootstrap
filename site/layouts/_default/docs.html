@@ -30,9 +30,5 @@
     </div>
 
     {{ partial "scripts" . }}
-
-    {{ range .Page.Params.external_js }}
-      <script src="{{ .src }}" integrity="{{ .integrity }}" crossorigin="anonymous"></script>
-    {{- end }}
   </body>
 </html>

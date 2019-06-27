@@ -53,5 +53,11 @@
         <script src="{{ . }}"></script>
       {{- end }}
     {{ end }}
+
+    {{ range .Page.Params.external_js }}
+      {{ $integrity := .integrity }}
+      {{ $async := .async }}
+      <script src="{{ .src }}"{{ with $integrity }} integrity="{{ $integrity }}"{{ end }}{{ with $async }} async{{ end }} crossorigin="anonymous"></script>
+    {{- end }}
   </body>
 </html>
